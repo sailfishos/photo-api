@@ -7,6 +7,7 @@
 #include "camera.h"
 #include "cameramanager.h"
 #include "imagecapture.h"
+#include "videocapture.h"
 #include "viewfinder.h"
 
 #include "generated/ctl-classes.h"
@@ -35,8 +36,9 @@ public:
     void registerTypes(const char *uri)
     {
         qmlRegisterType<Camera>(uri, 0, 1, "Camera");
-        qmlRegisterUncreatableType<StreamTarget>(uri, 0, 1, "StreamTarget", "use ImageCapture or Viewfinder");
+        qmlRegisterUncreatableType<StreamTarget>(uri, 0, 1, "StreamTarget", "use ImageCapture, VideoCapture or Viewfinder");
         qmlRegisterType<ImageCapture>(uri, 0, 1, "ImageCapture");
+        qmlRegisterType<VideoCapture>(uri, 0, 1, "VideoCapture");
         qmlRegisterType<Viewfinder>(uri, 0, 1, "Viewfinder");
         qmlRegisterSingletonType<CameraManager>(uri, 0, 1, "CameraManager", api_factory<CameraManager>);
         qmlRegisterUncreatableType<MeteringAreas>(uri, 0, 1, "MeteringAreas", "control is part of camera");

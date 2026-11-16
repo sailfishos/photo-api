@@ -14,6 +14,7 @@ qt_api_sources = [
   'imagecapture.cpp',
   'qmlplugin.cpp',
   'streamtarget.cpp',
+  'videocapture.cpp',
   'viewfinder.cpp',
 ]
 
@@ -24,12 +25,15 @@ qt_api_headers = [
   'controls.h',
   'imagecapture.h',
   'streamtarget.h',
+  'videocapture.h',
   'viewfinder.h',
 ]
 
 qt_api_deps = [
   core_dep,
   egl_dep,
+  gst_dep,
+  gstpbutils_dep,
   qt_core_dep,
   qt_quick_dep
 ]

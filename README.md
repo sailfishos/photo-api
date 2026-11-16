@@ -267,3 +267,4 @@ automatically generated from controls.yaml.
 For convenience, it also provides some other pieces needed to build a camera app:
 - Viewfinder based on EGL for hardware-accelerated zero-copy output
 - Image capture component capable of saving image files
+- Video recorder based on a GStreamer pipeline using `photostreamsrc`

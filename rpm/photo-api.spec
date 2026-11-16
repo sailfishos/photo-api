@@ -14,6 +14,7 @@ BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(gstreamer-1.0)
 BuildRequires:  pkgconfig(gstreamer-base-1.0)
+BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
 BuildRequires:  pkgconfig(gstreamer-video-1.0)
 BuildRequires:  pkgconfig(nemo-gstreamer-interfaces-1.0)
 BuildRequires:  pkgconfig(Qt5Core)
@@ -41,6 +42,7 @@ Requires: photo-api = %{version}-%{release}
 %package qt5
 Summary: QtQuick 5 QML wrapper for photo-api
 Requires: photo-api = %{version}-%{release}
+Recommends: photo-api-gstreamer
 
 %description qt5
 %{summary}

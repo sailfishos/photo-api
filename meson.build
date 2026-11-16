@@ -35,6 +35,7 @@ egl_dep = dependency('egl', required: true)
 # GStreamer integration
 gst_dep = dependency('gstreamer-1.0', required: true)
 gstbase_dep = dependency('gstreamer-base-1.0', required: true)
+gstpbutils_dep = dependency('gstreamer-pbutils-1.0', required: true)
 gstvideo_dep = dependency('gstreamer-video-1.0', required: true)
 gstcamerabinsrc_dep = cc.find_library('gstbasecamerabinsrc-1.0', required: true)
 gstnemointerfaces_dep = dependency('nemo-gstreamer-interfaces-1.0', required: true)

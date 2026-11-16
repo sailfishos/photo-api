@@ -8,6 +8,7 @@ This repository contains:
 
 - [controls.yaml](./controls.yaml): Central list of camera controls
 - [lib](./lib): `photo-api` core library
+- [qt](./qt): `org.sailfishos.PhotoApi` QML wrapper
 - [tools](./tools): example programs for testing
 
 ### High-level
@@ -241,3 +242,14 @@ _PhotoStreamPrivate { PhotoStream }
 
 and same for PhotoBuffer
 ```
+
+## Qt integration details
+
+This is only a QML plugin at the moment (no public C++ API).
+
+It is mostly a wrapper around the camera state management and controls. The control bindings are
+automatically generated from controls.yaml.
+
+For convenience, it also provides some other pieces needed to build a camera app:
+- Viewfinder based on EGL for hardware-accelerated zero-copy output
+- Image capture component capable of saving image files

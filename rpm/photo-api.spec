@@ -12,6 +12,8 @@ Source0:        %{name}-%{version}.tar.gz
 BuildRequires:  meson
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(egl)
+BuildRequires:  pkgconfig(Qt5Core)
+BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  python3-yaml
 
 %description
@@ -22,6 +24,13 @@ Summary: Development files for photo-api
 Requires: photo-api = %{version}-%{release}
 
 %description devel
+%{summary}
+
+%package qt5
+Summary: QtQuick 5 QML wrapper for photo-api
+Requires: photo-api = %{version}-%{release}
+
+%description qt5
 %{summary}
 
 %package tools
@@ -53,6 +62,11 @@ Requires: photo-api = %{version}-%{release}
 %{_includedir}/photo-api-0.1/
 %{_libdir}/libphoto-api-0.1.so
 %{_libdir}/pkgconfig/photo-api-0.1.pc
+
+%files qt5
+%dir %{_libdir}/qt5/qml/org/sailfishos/PhotoApi
+%{_libdir}/qt5/qml/org/sailfishos/PhotoApi/libqmlphotoapi.so
+%{_libdir}/qt5/qml/org/sailfishos/PhotoApi/qmldir
 
 %files tools
 %{_bindir}/*

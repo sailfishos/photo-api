@@ -4,7 +4,7 @@
 
 project(
   'photo-api',
-  'c',
+  'c', 'cpp',
   version: '0.1.0',
   default_options: [
     'warning_level=1',
@@ -32,6 +32,15 @@ add_project_arguments(
 glib_dep = dependency('glib-2.0', required: true)
 egl_dep = dependency('egl', required: true)
 
+# Qt integration
+qt5 = import('qt5')
+qt_core_dep = dependency('Qt5Core', required: true)
+qt_gui_dep = dependency('Qt5Gui', required: true)
+qt_gui_private_inc = include_directories(
+  join_paths(qt_gui_dep.get_variable('includedir'), 'QtGui', qt_gui_dep.version(), 'QtGui')
+)
+qt_quick_dep = dependency('Qt5Quick', required: true)
+
 core_inc = include_directories('lib')
 
 pkgconfig = import('pkgconfig')
@@ -39,4 +48,5 @@ python = find_program('python3')
 
 subdir('lib')
 
+subdir('qt')
 subdir('tools')

@@ -24,6 +24,13 @@ Requires: photo-api = %{version}-%{release}
 %description devel
 %{summary}
 
+%package tools
+Summary: Tools for photo-api
+Requires: photo-api = %{version}-%{release}
+
+%description tools
+%{summary}
+
 %prep
 %setup -q
 
@@ -46,3 +53,6 @@ Requires: photo-api = %{version}-%{release}
 %{_includedir}/photo-api-0.1/
 %{_libdir}/libphoto-api-0.1.so
 %{_libdir}/pkgconfig/photo-api-0.1.pc
+
+%files tools
+%{_bindir}/*

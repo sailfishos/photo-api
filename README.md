@@ -8,6 +8,7 @@ This repository contains:
 
 - [controls.yaml](./controls.yaml): Central list of camera controls
 - [lib](./lib): `photo-api` core library
+- [tools](./tools): example programs for testing
 
 ### High-level
 

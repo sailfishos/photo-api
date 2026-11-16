@@ -38,3 +38,5 @@ pkgconfig = import('pkgconfig')
 python = find_program('python3')
 
 subdir('lib')
+
+subdir('tools')

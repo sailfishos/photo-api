@@ -12,6 +12,10 @@ Source0:        %{name}-%{version}.tar.gz
 BuildRequires:  meson
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(egl)
+BuildRequires:  pkgconfig(gstreamer-1.0)
+BuildRequires:  pkgconfig(gstreamer-base-1.0)
+BuildRequires:  pkgconfig(gstreamer-video-1.0)
+BuildRequires:  pkgconfig(nemo-gstreamer-interfaces-1.0)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  python3-yaml
@@ -24,6 +28,14 @@ Summary: Development files for photo-api
 Requires: photo-api = %{version}-%{release}
 
 %description devel
+%{summary}
+
+%package gstreamer
+License: LGPLv2.1+
+Summary: GStreamer integration for photo-api
+Requires: photo-api = %{version}-%{release}
+
+%description gstreamer
 %{summary}
 
 %package qt5
@@ -62,6 +74,10 @@ Requires: photo-api = %{version}-%{release}
 %{_includedir}/photo-api-0.1/
 %{_libdir}/libphoto-api-0.1.so
 %{_libdir}/pkgconfig/photo-api-0.1.pc
+
+%files gstreamer
+%license LICENSES/LGPL-2.1.txt
+%{_libdir}/gstreamer-1.0/libgstphotoplugin.so
 
 %files qt5
 %dir %{_libdir}/qt5/qml/org/sailfishos/PhotoApi

@@ -7,6 +7,7 @@ Camera middleware layer
 This repository contains:
 
 - [controls.yaml](./controls.yaml): Central list of camera controls
+- [gst](./gst): GStreamer integration
 - [lib](./lib): `photo-api` core library
 - [qt](./qt): `org.sailfishos.PhotoApi` QML wrapper
 - [tools](./tools): example programs for testing
@@ -242,6 +243,19 @@ _PhotoStreamPrivate { PhotoStream }
 
 and same for PhotoBuffer
 ```
+
+## GStreamer integration details
+
+Two sources are provided for different use cases:
+
+- `photocamerasrc`
+    - camerabin-compatible source with viewfinder, image and video pads
+    - special `photo-controls` property provides access to controls
+    - can replace droidcamsrc in existing applications
+- `photostreamsrc`
+    - single source pad
+    - does not control camera state, only passes buffers to GStreamer
+    - easily integrated into applications using photo-api directly
 
 ## Qt integration details
 

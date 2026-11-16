@@ -32,6 +32,13 @@ add_project_arguments(
 glib_dep = dependency('glib-2.0', required: true)
 egl_dep = dependency('egl', required: true)
 
+# GStreamer integration
+gst_dep = dependency('gstreamer-1.0', required: true)
+gstbase_dep = dependency('gstreamer-base-1.0', required: true)
+gstvideo_dep = dependency('gstreamer-video-1.0', required: true)
+gstcamerabinsrc_dep = cc.find_library('gstbasecamerabinsrc-1.0', required: true)
+gstnemointerfaces_dep = dependency('nemo-gstreamer-interfaces-1.0', required: true)
+
 # Qt integration
 qt5 = import('qt5')
 qt_core_dep = dependency('Qt5Core', required: true)
@@ -48,5 +55,6 @@ python = find_program('python3')
 
 subdir('lib')
 
+subdir('gst')
 subdir('qt')
 subdir('tools')

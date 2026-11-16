@@ -1,0 +1,150 @@
+# SPDX-FileCopyrightText: 2026 Jolla Mobile Ltd
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# This file lists the camera controls exposed in the Sailfish OS photography
+# API. Parts of the library source code and headers are automatically generated
+# from this file.
+
+- id: AE_AREAS
+  description: Auto-exposure metering areas
+  type: areas
+
+- id: AE_COMPENSATION
+  description: Auto-exposure compensation amount (EV)
+  type: float
+
+- id: AF_AREAS
+  description: Auto-focus metering areas
+  type: areas
+
+- id: AWB_AREAS
+  description: Auto-white-balance metering areas
+  type: areas
+
+- id: EXPOSURE_MODE
+  description: Exposure control mode
+  values:
+    - id: AUTO_EXPOSURE
+      description: Exposure is controlled automatically
+    - id: PRIORITIZE_SENSITIVITY
+      description: Sensitivity set manually, automatic exposure time
+    - id: PRIORITIZE_EXPOSURE_TIME
+      description: Exposure time set manually, automatic sensitivity
+    - id: MANUAL_EXPOSURE
+      description: Sensitivity and exposure time set manually
+
+- id: EXPOSURE_TIME
+  description: Sensor exposure time (seconds), requires MANUAL_EXPOSURE or PRIORITIZE_EXPOSURE_TIME
+  type: float
+
+- id: FLASH_MODE
+  description: Flash mode
+  values:
+    - id: AUTO_FLASH
+      description: Flash fires automatically when needed
+    - id: AUTO_FLASH_REDEYE
+      description: Flash fires automatically when needed with red-eye reduction
+    - id: FLASH_ON
+      description: Flash fires on every capture
+    - id: FLASH_OFF
+      description: Flash does not fire
+    - id: FLASH_TORCH
+      description: Flash remains on in torch mode
+
+- id: FOCUS_MODE
+  description: Focus mode
+  values:
+    - id: AUTO_FOCUS
+      description: Auto-focus when triggered
+    - id: CONTINUOUS_AUTO_FOCUS
+      description: Continuous auto-focus during preview/video
+    - id: MANUAL_FOCUS
+      description: Focus is controlled manually
+
+- id: LENS_FOCUS
+  description: Focus distance (1/m), requires MANUAL_FOCUS
+  type: float
+
+- id: SENSITIVITY
+  description: Sensor light sensitivity (ISO), requires MANUAL_EXPOSURE or PRIORITIZE_SENSITIVITY
+  type: float
+
+- id: WHITE_BALANCE_MODE
+  description: White balance mode
+  values:
+    - id: MANUAL_WHITE_BALANCE
+      description: White balance is not adjusted by camera
+    - id: AUTO_WHITE_BALANCE
+      description: White balance is automatic
+    - id: INCANDESCENT
+      description: Adjust for incandescent illumination
+    - id: FLUORESCENT
+      description: Adjust for fluorescent illumination
+    - id: WARM_FLUORESCENT
+      description: Adjust for warm fluorescent illumination
+    - id: SUNLIGHT
+      description: Adjust for sunny daylight
+    - id: CLOUDY
+      description: Adjust for cloudy daylight
+    - id: TWILIGHT
+      description: Adjust for twilight
+    - id: SHADE
+      description: Adjust for shade
+
+- id: ZOOM
+  description: Zoom factor
+  type: float
+
+- id: SCENE_MODE
+  description: Scene optimization mode. If set to any other value than NORMAL_SCENE, manual controls should not be used.
+  values:
+    - id: NORMAL_SCENE
+      description: Automatic or manual control depending on EXPOSURE_MODE, FOCUS_MODE, WHITE_BALANCE_MODE
+    - id: PORTRAIT_SCENE
+      description: Optimize for still portrait photos
+    - id: LANDSCAPE_SCENE
+      description: Optimize for still landscape photos
+    - id: SPORTS
+      description: Optimize for quickly moving people
+    - id: NIGHT
+      description: Optimize for low-light conditions
+    - id: ACTION
+      description: Optimize for quickly moving objects
+    - id: NIGHT_PORTRAIT
+      description: Optimize for still portrait photos in low-light conditions
+    - id: THEATRE
+      description: Optimize for indoor theatre photos in low-light conditions
+    - id: BEACH
+      description: Optimize for bright outdoor conditions
+    - id: SNOW
+      description: Optimize for bright outdoor conditions containing snow
+    - id: SUNSET
+      description: Optimize for sunset photos
+    - id: STEADY_PHOTO
+      description: Optimize for conditions where shaking may occur
+    - id: FIREWORKS
+      description: Optimize for bright fireworks in low-light conditions
+    - id: PARTY
+      description: Optimize for indoor low-light conditions with people
+    - id: CANDLELIGHT
+      description: Optimize for dim candle lighting
+    - id: BARCODE
+      description: Optimize for ability to decode captured barcodes
+    - id: HDR
+      description: Internally combine multiple captures with different exposure settings
+
+- id: CHANNEL_GAINS
+  description: Gain for each raw channel (R, Gr, Gb, B)
+  type: float
+  array: [4]
+
+- id: COLOR_TRANSFORM
+  description: Color correction transform (3x3 matrix)
+  type: float
+  array: [3,3]
+
+- id: LUX_ESTIMATE
+  description: Illuminance estimated by AE algorithm (lux)
+  readonly: true
+  type: float
